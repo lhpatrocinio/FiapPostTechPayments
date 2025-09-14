@@ -27,7 +27,7 @@ namespace Payments.Api.Extensions.Swagger
                 {
                     options.SwaggerDoc(description.GroupName, new OpenApiInfo()
                     {
-                        Title = $"API - {description.GroupName.ToUpper()}",
+                        Title = $"PAYMENTS API - {description.GroupName.ToUpper()}",
                         Version = description.ApiVersion.ToString(),
                         Description = "Documentação gerada automaticamente com Swagger e ApiVersioning."
                     });

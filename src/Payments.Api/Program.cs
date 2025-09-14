@@ -25,9 +25,7 @@ builder.Services.AddSwaggerDocumentation();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-//builder.Services.AddIdentityExtension();
 builder.Services.AddAuthorizationExtension(builder.Configuration);
-//builder.Services.AddIoC();
 
 // Adiciona configuração CORS para permitir solicitações do Prometheus
 builder.Services.AddCors(options =>
