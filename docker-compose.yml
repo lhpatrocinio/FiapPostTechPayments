@@ -3,6 +3,7 @@ name: FiapPayments
 services:
   payments.api:
     image: ${DOCKER_REGISTRY-}paymentsapi
+    container_name: FiapPayments
     build:
       context: .
       dockerfile: src/Payments.Api/Dockerfile
