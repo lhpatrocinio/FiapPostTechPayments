@@ -12,29 +12,30 @@ namespace Payments.Application.Services
             _paymentRepository = paymentRepository;
         }
 
-        public Task AddAsync(Payment game)
+        public async Task AddAsync(Payment Payment)
         {
-            throw new NotImplementedException();
+           await  _paymentRepository.AddAsync(Payment);
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var payment = await _paymentRepository.GetByIdAsync(id);
+            await _paymentRepository.DeleteAsync(payment);
         }
 
-        public Task<IEnumerable<Payment>> GetAllAsync()
+        public async Task<IEnumerable<Payment>> GetAllAsync()
         {
-            throw new NotImplementedException();
+          return await _paymentRepository.GetAllAsync();
         }
 
-        public Task<Payment?> GetByIdAsync(Guid id)
+        public async Task<Payment> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _paymentRepository.GetByIdAsync(id);
         }
 
-        public Task UpdateAsync(Payment game)
+        public async Task UpdateAsync(Payment game)
         {
-            throw new NotImplementedException();
+            await _paymentRepository.UpdateAsync(game);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Payments.Api.Controllers.V1
     public class PaymentsController : ControllerBase
     {
         private readonly IPaymentService _paymentService;
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper; 
 
         public PaymentsController(IPaymentService paymentService, IMapper mapper)
         {
@@ -28,7 +28,7 @@ namespace Payments.Api.Controllers.V1
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [Authorize(Roles = "Payment")]
+        [Authorize(Roles = "Payments")]
         [HttpGet("list")]
         public async Task<IActionResult> GetAll(CancellationToken cancellationToken = default)
         {
@@ -40,7 +40,7 @@ namespace Payments.Api.Controllers.V1
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [Authorize(Roles = "Payment")]
+        [Authorize(Roles = "Payments")]
         [HttpGet("getbyid")]
         public async Task<IActionResult> GetById([FromQuery] Guid id, CancellationToken cancellationToken = default)
         {
@@ -53,7 +53,7 @@ namespace Payments.Api.Controllers.V1
 
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [Authorize(Roles = "Payment")]
+        [Authorize(Roles = "Payments")]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] PaymentRequest request, CancellationToken cancellationToken = default)
         {
@@ -67,7 +67,7 @@ namespace Payments.Api.Controllers.V1
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [Authorize(Roles = "Payment")]
+        [Authorize(Roles = "Payments")]
         [HttpPut("update")]
         public async Task<IActionResult> Update([FromQuery] Guid id, [FromBody] PaymentRequest request, CancellationToken cancellationToken = default)
         {
@@ -81,7 +81,7 @@ namespace Payments.Api.Controllers.V1
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [Authorize(Roles = "Payment")]
+        [Authorize(Roles = "Payments")]
         [HttpDelete("delete")]
         public async Task<IActionResult> Delete([FromQuery] Guid id, CancellationToken cancellationToken = default)
         {

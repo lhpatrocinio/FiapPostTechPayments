@@ -13,7 +13,7 @@ services:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_HTTP_PORTS=80
     ports:
-      - "9000:80"
+      - "9200:80"
     networks:
       - postech-network
     healthcheck:

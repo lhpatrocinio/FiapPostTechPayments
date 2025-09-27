@@ -1,6 +1,8 @@
-﻿using Payments.Application.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using Payments.Application.Repository;
 using Payments.Domain.Entities;
 using Payments.Infrastructure.DataBase.EntityFramework.Context;
+using System.Xml.Linq;
 
 namespace Payments.Infrastructure.DataBase.Repository
 {
@@ -13,34 +15,37 @@ namespace Payments.Infrastructure.DataBase.Repository
             _context = context;
         }
 
-        public Task AddAsync(Payment entity)
+        public async Task AddAsync(Payment entity)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(entity);
+            await SaveChangesAsync();
         }
 
-        public void Delete(Payment entity)
+        public async Task DeleteAsync(Payment entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Payment>().Remove(entity);
+            await SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Payment>> GetAllAsync()
+        public async Task<IEnumerable<Payment>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Set<Payment>().ToListAsync();
         }
 
-        public Task<Payment> GetByIdAsync(Guid paymentId)
+        public async Task<Payment> GetByIdAsync(Guid paymentId)
         {
-            throw new NotImplementedException();
+            return await _context.Set<Payment>().Where(x => x.Id == paymentId).FirstOrDefaultAsync();
         }
 
-        public Task SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Payment entity)
+        public async Task UpdateAsync(Payment entity)
         {
-            throw new NotImplementedException();
+            _context.Set<Payment>().Update(entity);
+            await SaveChangesAsync();
         }
     }
 }

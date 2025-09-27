@@ -7,8 +7,8 @@ namespace Payments.Application.Repository
         Task<IEnumerable<Payment>> GetAllAsync();
         Task<Payment> GetByIdAsync(Guid paymentId);
         Task AddAsync(Payment entity);
-        void Update(Payment entity);
-        void Delete(Payment entity);
+        Task UpdateAsync(Payment entity);
+        Task DeleteAsync(Payment entity);
         Task SaveChangesAsync();
     }
 }
