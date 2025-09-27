@@ -16,7 +16,7 @@ namespace Payments.Api.Controllers.V1
     public class PaymentsController : ControllerBase
     {
         private readonly IPaymentService _paymentService;
-        private readonly IMapper _mapper; 
+        private readonly IMapper _mapper;
 
         public PaymentsController(IPaymentService paymentService, IMapper mapper)
         {

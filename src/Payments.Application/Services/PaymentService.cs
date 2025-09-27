@@ -14,7 +14,7 @@ namespace Payments.Application.Services
 
         public async Task AddAsync(Payment Payment)
         {
-           await  _paymentRepository.AddAsync(Payment);
+            await _paymentRepository.AddAsync(Payment);
         }
 
         public async Task DeleteAsync(Guid id)
@@ -25,7 +25,7 @@ namespace Payments.Application.Services
 
         public async Task<IEnumerable<Payment>> GetAllAsync()
         {
-          return await _paymentRepository.GetAllAsync();
+            return await _paymentRepository.GetAllAsync();
         }
 
         public async Task<Payment> GetByIdAsync(Guid id)

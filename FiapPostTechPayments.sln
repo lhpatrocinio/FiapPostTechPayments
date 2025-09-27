@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{6236A0
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Test", "tests\Payments.Test\Payments.Test.csproj", "{95ABC51F-478C-4E63-ADCA-F6FC74D0B740}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95ABC51F-478C-4E63-ADCA-F6FC74D0B740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95ABC51F-478C-4E63-ADCA-F6FC74D0B740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95ABC51F-478C-4E63-ADCA-F6FC74D0B740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95ABC51F-478C-4E63-ADCA-F6FC74D0B740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{A15DEADB-5166-46BB-B021-BB2C1B64599D} = {06911DCF-6F7D-45F4-A0CE-62C8CD4C8C9F}
 		{BFCD5909-893D-4605-9D6C-C7A2611A34E4} = {CD01DB9D-ED28-4636-856C-ACD4699ED6DF}
 		{E90E4B9F-94D2-472F-A31B-FCCD1BEA8811} = {1B54E49B-1404-454E-9DFC-59E21FF8037E}
+		{95ABC51F-478C-4E63-ADCA-F6FC74D0B740} = {F22C259C-F4C9-44F9-9049-4F40D9D60290}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AC58DE9-C145-4A10-ADF1-5E21B29D9A76}

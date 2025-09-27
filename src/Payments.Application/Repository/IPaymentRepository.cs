@@ -2,7 +2,7 @@ using Payments.Domain.Entities;
 
 namespace Payments.Application.Repository
 {
-    public interface IPaymentRepository 
+    public interface IPaymentRepository
     {
         Task<IEnumerable<Payment>> GetAllAsync();
         Task<Payment> GetByIdAsync(Guid paymentId);
