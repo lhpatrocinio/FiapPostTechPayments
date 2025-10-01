@@ -10,6 +10,7 @@ using Payments.Api.Extensions.Mappers;
 using Payments.Api.Extensions.Migration;
 using Payments.Api.Extensions.Swagger;
 using Payments.Api.Extensions.Swagger.Middleware;
+using Payments.Api.Extensions.Tracing;
 using Payments.Api.Extensions.Versioning;
 using Payments.Application;
 using Payments.Infrastructure;
@@ -45,6 +46,9 @@ builder.Services.AddPrometheusMonitoring();
 
 // Adiciona integração ELK
 builder.Services.AddELKIntegration(builder.Configuration);
+
+// Distributed Tracing with OpenTelemetry + Jaeger
+builder.Services.AddDistributedTracing(builder.Configuration);
 
 #region [DI]
 
