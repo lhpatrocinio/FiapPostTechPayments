@@ -13,6 +13,7 @@ namespace Payments.Api.Controllers.V1
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
+    [AllowAnonymous]
     public class PaymentsController : ControllerBase
     {
         private readonly IPaymentService _paymentService;
