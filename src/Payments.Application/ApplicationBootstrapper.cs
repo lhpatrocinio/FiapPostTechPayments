@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Payments.Application.Producer;
 using Payments.Application.Repository;
 using Payments.Application.Services;
 using Payments.Application.Services.Interfaces;
@@ -15,6 +16,7 @@ namespace Payments.Application
         public static void Register(IServiceCollection services)
         {
             services.AddTransient<IPaymentService, PaymentService>();
+            services.AddTransient<IPaymentCompletedProducer,  PaymentCompletedProducer>();
         }
     }
 }
