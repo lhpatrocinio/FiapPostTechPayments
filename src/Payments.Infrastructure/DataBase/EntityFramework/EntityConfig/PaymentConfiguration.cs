@@ -15,6 +15,8 @@ namespace Payments.Infrastructure.DataBase.EntityFramework.EntityConfig
 
             builder.Property(u => u.UserId);
 
+            builder.Property(u => u.GameId);
+
             builder.Property(u => u.PaymentDate);
 
             builder.Property(g => g.Amount)

@@ -1,4 +1,5 @@
-﻿using Payments.Application.Repository;
+﻿using Payments.Application.Producer;
+using Payments.Application.Repository;
 using Payments.Application.Services.Interfaces;
 using Payments.Domain.Entities;
 
@@ -7,14 +8,21 @@ namespace Payments.Application.Services
     public class PaymentService : IPaymentService
     {
         private readonly IPaymentRepository _paymentRepository;
-        public PaymentService(IPaymentRepository paymentRepository)
+        private readonly IPaymentCompletedProducer _paymentCompletedProducer;
+        public PaymentService(IPaymentRepository paymentRepository, IPaymentCompletedProducer paymentCompletedProducer)
         {
             _paymentRepository = paymentRepository;
+            _paymentCompletedProducer = paymentCompletedProducer;
         }
 
         public async Task AddAsync(Payment Payment)
         {
             await _paymentRepository.AddAsync(Payment);
+            _paymentCompletedProducer.PublishUserActiveEvent(new PaymentCompletedProducer.PaymentCompleted()
+            {
+                GameId = Payment.GameId,
+                UserId = Payment.UserId
+            });
         }
 
         public async Task DeleteAsync(Guid id)

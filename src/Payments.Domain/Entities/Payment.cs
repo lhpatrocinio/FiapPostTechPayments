@@ -13,6 +13,7 @@ namespace Payments.Domain.Entities
     public class Payment : Entity
     {
         public Guid UserId { get; set; }
+        public Guid GameId { get; set; }
         public decimal Amount { get; set; }
         public string Currency { get; set; } = "BRL";
         public PaymentStatus Status { get; set; }
